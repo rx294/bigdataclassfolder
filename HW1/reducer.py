@@ -9,19 +9,19 @@ word_pair = None
 
 for line in sys.stdin:
     line = line.strip()
-
     word_pair, count = line.split('\t', 1)
     try:
         count = int(count)
     except ValueError:
         continue
+
     if current_word_pair == word_pair:
         current_word_pair_count += count
     else:
         if current_word_pair:
             print '%s\t%s' % (current_word_pair, current_word_pair_count)
         current_word_pair_count = count
-        current_word_pair = word
+        current_word_pair = word_pair
 
-if current_word == word:
+if current_word_pair == word_pair:
     print '%s\t%s' % (current_word_pair, current_word_pair_count)
