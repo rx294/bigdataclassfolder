@@ -15,4 +15,4 @@ for line in sys.stdin:
 
         if first == second:
             continue
-        print '%s-%s\t%s' % (first,second, 1)
+        print '%s %s\t%s' % (first,second, 1)
