@@ -7,11 +7,11 @@ for line in sys.stdin:
     line = line.strip()
 
     words = re.findall(r"[a-z0-9]+", line)
-    words.append('')
-    if len(words) == 1:
-        print '%s\t%s' % (words[0], 1)
-    for x in range(0,len(words)-1):
-        first = words[x]
-        second = words[x + 1]
+    for x in range(0,len(words)):
+        # first = words[x]
+        # second = words[x + 1]
+        if  (x + 1)<len(words):
+            print '%s %s\t%s' % (words[x].lower(),words[x+1].lower(), 1)
+        else:
+            print '%s\t%s' % (words[x].lower(), 1)
 
-        print '%s %s\t%s' % (first.lower(),second.lower(), 1)
